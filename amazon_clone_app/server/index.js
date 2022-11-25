@@ -1,15 +1,18 @@
 //IMPORTS FROM PACAGES
+const {securityKeys} = require('../securityKeys/constants')
 const express = require('express');
 const mongoose = require('mongoose');
 
+
 //IMPORTS FROM OTHER FILES
-const authRouter = require('./routes/auth');;
+const authRouter = require('./routes/auth');
+
 
 //INITS
 const PORT = 3000;
 const app = express();
-const DB = "mongodb+srv://emsar:Emsika170900!@cluster0.blbuwog.mongodb.net/?retryWrites=true&w=majority"
-
+//Added security key
+const DB = securityKeys.dbKey;
 //middleware
 //CLient -> middleware -> Server -> Client
 app.use(express.json())
