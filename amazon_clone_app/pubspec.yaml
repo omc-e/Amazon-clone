@@ -43,6 +43,7 @@ dependencies:
   http: ^0.13.5
   provider: ^6.0.4
   shared_preferences: ^2.0.15
+  carousel_slider: ^4.1.1
 
 dev_dependencies:
   flutter_test:
