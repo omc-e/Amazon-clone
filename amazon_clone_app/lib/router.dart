@@ -1,6 +1,6 @@
 import 'package:amazon_clone_app/common/widgets/bottom_bar.dart';
 import 'package:amazon_clone_app/features/auth/screens/auth_screen.dart';
-import 'package:amazon_clone_app/features/auth/widgets/home/screens/home_screen.dart';
+import 'package:amazon_clone_app/features/home/screens/home_screen.dart';
 
 import 'package:flutter/material.dart';
 
