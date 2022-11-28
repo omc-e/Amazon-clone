@@ -44,6 +44,9 @@ dependencies:
   provider: ^6.0.4
   shared_preferences: ^2.0.15
   carousel_slider: ^4.1.1
+  dotted_border: ^2.0.0+3
+  file_picker: ^5.2.2
+  cloudinary_public: ^0.20.0
 
 dev_dependencies:
   flutter_test:

@@ -1,4 +1,5 @@
 import 'package:amazon_clone_app/common/widgets/bottom_bar.dart';
+import 'package:amazon_clone_app/features/admin/screens/add_product_scree.dart';
 import 'package:amazon_clone_app/features/auth/screens/auth_screen.dart';
 import 'package:amazon_clone_app/features/home/screens/home_screen.dart';
 
@@ -17,6 +18,10 @@ Route<dynamic> generateRoute(RouteSettings routeSettings) {
     case HomeScreen.routeName:
       return MaterialPageRoute(
         builder: (_) => const HomeScreen(),
+      );
+    case AddProductScreen.routeName:
+      return MaterialPageRoute(
+        builder: (_) => const AddProductScreen(),
       );
     default:
       return MaterialPageRoute(
