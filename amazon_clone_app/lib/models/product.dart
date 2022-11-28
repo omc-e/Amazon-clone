@@ -4,12 +4,12 @@ import 'dart:convert';
 class Product {
   final String name;
   final String description;
-  final double quantity;
+  final dynamic quantity;
   final String category;
-  final double price;
+  final dynamic price;
   final String? id;
 
-  final List<String> images;
+  final List<dynamic> images;
   Product({
     required this.name,
     required this.description,
@@ -36,11 +36,11 @@ class Product {
     return Product(
       name: map['name'] as String,
       description: map['description'] as String,
-      quantity: map['quantity'] as double,
+      quantity: map['quantity'] as dynamic,
       category: map['category'] as String,
-      price: map['price'] as double,
+      price: map['price'] as dynamic,
       id: map['_id'] != null ? map['id'] as String : null,
-      images: List<String>.from((map['images'] as List<String>)),
+      images: List<dynamic>.from((map['images'] as List<dynamic>)),
     );
   }
 

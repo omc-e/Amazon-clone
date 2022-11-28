@@ -1,5 +1,5 @@
 import 'package:amazon_clone_app/features/admin/screens/post_screen.dart';
-import 'package:badges/badges.dart';
+
 import 'package:flutter/material.dart';
 
 import '../../../constants/global_variables.dart';
