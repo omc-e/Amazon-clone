@@ -1,4 +1,5 @@
 import 'package:amazon_clone_app/common/widgets/custom_button.dart';
+import 'package:amazon_clone_app/features/address/screen/address_screen.dart';
 import 'package:amazon_clone_app/features/cart/widgets/cart_subtotal.dart';
 import 'package:amazon_clone_app/features/home/widgets/address_box.dart';
 import 'package:flutter/material.dart';
@@ -19,6 +20,10 @@ class CartScreen extends StatefulWidget {
 class _CartScreenState extends State<CartScreen> {
   void navigateToSearchScreen(String query) {
     Navigator.pushNamed(context, SearchScreen.routeName, arguments: query);
+  }
+
+  void navigateToAddressScreen() {
+    Navigator.pushNamed(context, AddressScreen.routeName);
   }
 
   @override
@@ -113,7 +118,7 @@ class _CartScreenState extends State<CartScreen> {
               padding: const EdgeInsets.all(8.0),
               child: CustomButton(
                 text: 'Proceed to Buy (${user.cart.length} items)',
-                onTap: () {},
+                onTap: navigateToAddressScreen,
                 color: Colors.yellow[600],
               ),
             ),
