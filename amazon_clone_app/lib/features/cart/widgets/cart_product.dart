@@ -1,8 +1,10 @@
+import 'package:amazon_clone_app/features/product_details/services/product_details_services.dart';
 import 'package:amazon_clone_app/providers/user_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../../models/product.dart';
+import '../services/cart_services.dart';
 
 class CartProduct extends StatefulWidget {
   final int index;
@@ -16,6 +18,18 @@ class CartProduct extends StatefulWidget {
 }
 
 class _CartProductState extends State<CartProduct> {
+  final ProductDetailsServices productDetailsServices =
+      ProductDetailsServices();
+  final CartServices cartServices = CartServices();
+
+  void increseQuantity(Product product) {
+    productDetailsServices.addToCart(context: context, product: product);
+  }
+
+  void decreseQuantity(Product product) {
+    cartServices.removeFromoCart(context: context, product: product);
+  }
+
   @override
   Widget build(BuildContext context) {
     final productCart = context.watch<UserProvider>().user.cart[widget.index];
@@ -108,13 +122,16 @@ class _CartProductState extends State<CartProduct> {
                 ),
                 child: Row(
                   children: [
-                    Container(
-                      width: 35,
-                      height: 32,
-                      alignment: Alignment.center,
-                      child: const Icon(
-                        Icons.remove,
-                        size: 18,
+                    InkWell(
+                      onTap: () => decreseQuantity(product),
+                      child: Container(
+                        width: 35,
+                        height: 32,
+                        alignment: Alignment.center,
+                        child: const Icon(
+                          Icons.remove,
+                          size: 18,
+                        ),
                       ),
                     ),
                     DecoratedBox(
@@ -135,13 +152,16 @@ class _CartProductState extends State<CartProduct> {
                         ),
                       ),
                     ),
-                    Container(
-                      width: 35,
-                      height: 32,
-                      alignment: Alignment.center,
-                      child: const Icon(
-                        Icons.add,
-                        size: 18,
+                    InkWell(
+                      onTap: () => increseQuantity(product),
+                      child: Container(
+                        width: 35,
+                        height: 32,
+                        alignment: Alignment.center,
+                        child: const Icon(
+                          Icons.add,
+                          size: 18,
+                        ),
                       ),
                     ),
                   ],
